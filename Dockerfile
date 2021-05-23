@@ -35,6 +35,6 @@ RUN export export PATH=$PATH:/root/.local/bin
 
 RUN pip install --use-feature=2020-resolver tokenizers transformers[sentencepiece] pandas nltk spacy scikit-learn jax jaxlib==0.1.67+cuda111 -f https://storage.googleapis.com/jax-releases/jax_releases.html
 
-RUN pip install --no-warn-script-location --use-feature=2020-resolver --user -q tensorflow_text 
+# RUN pip install --no-warn-script-location --use-feature=2020-resolver --user -q tensorflow_text 
 
-RUN pip uninstall -y tensorflow==2.4.1
+# RUN pip uninstall -y tensorflow==2.4.1
