@@ -41,4 +41,4 @@ RUN pip install --use-feature=2020-resolver tokenizers transformers[sentencepiec
 
 # RUN pip uninstall -y tensorflow==2.4.1
 
-CMD ["bash", "-c", "source /etc/bash.bashrc && cp -r /mosesdecoder /tf/mosesdecoder && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
+CMD ["bash", "-c", "source /etc/bash.bashrc && rm -r /mosesdecoder/.git && cp -r /mosesdecoder /tf/mosesdecoder && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
