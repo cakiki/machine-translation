@@ -23,11 +23,13 @@ RUN set -x \
     doxygen \
     && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /
+
 RUN git clone https://github.com/moses-smt/mosesdecoder
 
-WORKDIR /tf/mosesdecoder
+WORKDIR /mosesdecoder
 
-RUN ./bjam -j8
+RUN ./bjam -j16
 
 WORKDIR /tf
 
@@ -38,3 +40,5 @@ RUN pip install --use-feature=2020-resolver tokenizers transformers[sentencepiec
 # RUN pip install --no-warn-script-location --use-feature=2020-resolver --user -q tensorflow_text 
 
 # RUN pip uninstall -y tensorflow==2.4.1
+
+CMD ["bash", "-c", "source /etc/bash.bashrc && cp -r /mosesdecoder /tf/mosesdecoder && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]

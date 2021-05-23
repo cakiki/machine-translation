@@ -1,3 +1,7 @@
 data/*
 !data/.gitkeep
 material/practicalassignments.pdf
+.*
+!/.gitignore
+mosesdecoder/*
+!mosesdecoder/README
