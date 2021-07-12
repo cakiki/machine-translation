@@ -5,3 +5,8 @@ material/practicalassignments.pdf
 !/.gitignore
 mosesdecoder/*
 !mosesdecoder/README
+berkeleyparser/*
+!berkeleyparser/README
+!berkeleyparser/LICENSE
+models/*
+!models/.gitkeep
